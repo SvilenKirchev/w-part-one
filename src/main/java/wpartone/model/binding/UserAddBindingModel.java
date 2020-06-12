@@ -26,7 +26,7 @@ public class UserAddBindingModel {
         this.username = username;
     }
 
-    @Length(min = 3, max = 10, message = "Password must be between 2 and 10 characters")
+    @Length(min = 3, max = 10, message = "Password must be between 3 and 10 characters")
     public String getPassword() {
         return password;
     }

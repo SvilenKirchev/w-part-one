@@ -43,7 +43,8 @@ public class UserController {
         }
 
         // TODO: login in service
-        httpSession.setAttribute("user", " ");
+        httpSession.setAttribute("user", "userServiceModel");
+        httpSession.setAttribute("id", "userId");
         return modelAndView;
     }
 
@@ -65,7 +66,7 @@ public class UserController {
             UserServiceModel userServiceModel = this.userService
                     .registerUser(this.modelMapper.map(userAddBindingModel, UserServiceModel.class));
 
-            modelAndView.setViewName("/redirect/users/login");
+            modelAndView.setViewName("redirect:/users/login");
         }
 
         return modelAndView;
