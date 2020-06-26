@@ -2,7 +2,7 @@ package wpartone.model.service;
 
 import java.time.LocalDateTime;
 
-public class ExerciseServiceModel extends BaceServiceModel{
+public class ExerciseServiceModel extends BaceServiceModel {
 
     private String name;
     private LocalDateTime addedOn;

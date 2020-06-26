@@ -31,7 +31,7 @@ public class UserController {
 
     @GetMapping("/login")
     public ModelAndView login(@Valid @ModelAttribute("userLoginBindingModel") UserLoginBindingModel userLoginBindingModel,
-                        BindingResult bindingResult, ModelAndView modelAndView) {
+                              BindingResult bindingResult, ModelAndView modelAndView) {
         modelAndView.addObject("userLoginBindingModel", userLoginBindingModel);
         modelAndView.setViewName("login");
 

@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService {
     public void addRoleToUser(String username, String role) {
         User user = this.userRepository.findByUsername(username).orElse(null);
 
-        if (!user.getRole().getName().equals(role)){
+        if (!user.getRole().getName().equals(role)) {
             Role roleEntity = this.modelMapper.map(this.roleService.findByName(role), Role.class);
 
             user.setRole(roleEntity);

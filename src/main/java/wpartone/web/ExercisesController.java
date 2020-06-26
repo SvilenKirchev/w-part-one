@@ -27,19 +27,19 @@ public class ExercisesController {
     }
 
     @GetMapping("/add")
-    public String add(@Valid @ModelAttribute("exerciseAddBindingModel")ExerciseAddBindingModel exerciseAddBindingModel,
-                      BindingResult bindingResult){
+    public String add(@Valid @ModelAttribute("exerciseAddBindingModel") ExerciseAddBindingModel exerciseAddBindingModel,
+                      BindingResult bindingResult) {
         return "exercise-add";
     }
 
     @PostMapping("/add")
-    public String addConfirm(@Valid @ModelAttribute("exerciseAddBindingModel")ExerciseAddBindingModel exerciseAddBindingModel,
-                             BindingResult bindingResult, RedirectAttributes redirectAttributes){
+    public String addConfirm(@Valid @ModelAttribute("exerciseAddBindingModel") ExerciseAddBindingModel exerciseAddBindingModel,
+                             BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
-        if (bindingResult.hasErrors()){
-            redirectAttributes.addFlashAttribute("exerciseAddBindingModel",exerciseAddBindingModel);
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("exerciseAddBindingModel", exerciseAddBindingModel);
             return "redirect:/exercises/add";
-        }else {
+        } else {
             //todo
             this.exerciseService.addEx(this.modelMapper.map(exerciseAddBindingModel, ExerciseServiceModel.class));
             return "redirect:/";

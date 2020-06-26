@@ -31,12 +31,14 @@
                                 <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Name
                                 </label>
                                 <input id="name" name="name" type="text"
-                                       th:field="*{name}" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"/>
+                                       th:field="*{name}"
+                                       class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"/>
 
                             </div>
                             <div class="input-group mb-3 justify-content-center">
 
-                                <small th:each="e : ${#fields.errors('name')}" th:text="${e}" class="text-danger"></small>
+                                <small th:each="e : ${#fields.errors('name')}" th:text="${e}"
+                                       class="text-danger"></small>
 
                             </div>
                             <div class="input-group mb-3">
@@ -50,7 +52,8 @@
                             </div>
                             <div class="input-group mb-3 justify-content-center">
 
-                                <small th:each="e : ${#fields.errors('addedOn')}" th:text="${e}" class="text-danger"></small>
+                                <small th:each="e : ${#fields.errors('addedOn')}" th:text="${e}"
+                                       class="text-danger"></small>
 
                             </div>
                             <div class="input-group mb-3 ">
@@ -63,7 +66,8 @@
                             </div>
                             <div class="input-group mb-3 justify-content-center">
 
-                                <small th:each="e : ${#fields.errors('dueDate')}" th:text="${e}" class="text-danger"></small>
+                                <small th:each="e : ${#fields.errors('dueDate')}" th:text="${e}"
+                                       class="text-danger"></small>
 
                             </div>
                             <div class="input-group mb-3">

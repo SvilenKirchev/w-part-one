@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "exercises")
-public class Exercise extends BaseEntity{
+public class Exercise extends BaseEntity {
 
     private String name;
     private LocalDateTime addedOn;

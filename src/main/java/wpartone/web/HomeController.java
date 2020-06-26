@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 public class HomeController {
 
     @GetMapping("/")
-    public String index(HttpSession httpSession){
+    public String index(HttpSession httpSession) {
         return httpSession.getAttribute("user") == null ? "index" : "home";
     }
 

@@ -28,7 +28,7 @@ public class RolesController {
     }
 
     @GetMapping("/add")
-    public ModelAndView add(ModelAndView modelAndView){
+    public ModelAndView add(ModelAndView modelAndView) {
 
         modelAndView.addObject("usernames", this.userService.findAllUsernames());
         modelAndView.setViewName("role-add");
@@ -36,7 +36,7 @@ public class RolesController {
     }
 
     @PostMapping("/add")
-    public String addConfirm(@Valid @ModelAttribute("roleAddBindingModel")RoleAddBindingModel roleAddBindingModel){
+    public String addConfirm(@Valid @ModelAttribute("roleAddBindingModel") RoleAddBindingModel roleAddBindingModel) {
 
         //todo validate
         this.userService.addRoleToUser(roleAddBindingModel.getUsername(), roleAddBindingModel.getRole());

@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "homework")
-public class Homework extends BaseEntity{
+public class Homework extends BaseEntity {
 
     private LocalDateTime addedOn;
     private String gitAddress;

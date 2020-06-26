@@ -1,4 +1,4 @@
-<th:block>
+<th:block xmlns:th="http://www.thymeleaf.org">
     <a class="navbar-brand" href="/">
         <h1 class="tm-site-title mb-0">Judge v2</h1>
     </a>
@@ -8,14 +8,14 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div th:object="${session.get('user')}" class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span class="sr-only">Hello {username}</span>
+                <a th:text="|Hello *{username}|" class="nav-link" th:href="@{/users/frofile/(id = *{id})}">
+                    <span class="sr-only"></span>
                 </a>
             </li>
-
+                <th:block th:if="*{role.name == 'ADMIN'}">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                    role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -28,7 +28,7 @@
 
                 </div>
             </li>
-
+                </th:block>
             <li class="nav-item">
                 <a class="nav-link" href="/homework/check">Check Homework</a>
             </li>
@@ -37,7 +37,7 @@
                 <a class="nav-link" href="/homework/add">Add Homework</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
+                <a class="nav-link" th:href="@{/users/frofile/(id = *{id})}">Profile</a>
             </li>
 
         </ul>
